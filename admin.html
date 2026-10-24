@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard | Vision India : PDA{% endblock %}
+
+{% block content %}
+
+<!-- Header -->
+<section class="bg-slate-900 text-white py-12 border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <span class="text-xs font-bold text-red-400 uppercase tracking-widest">Portal Management</span>
+      <h1 class="text-2xl sm:text-3xl font-black">Vision India Movement Dashboard</h1>
+    </div>
+    <div class="text-xs text-slate-400">
+      <i class="fa-solid fa-database text-green-400 mr-1"></i> SQLite Database Connected
+    </div>
+  </div>
+</section>
+
+<!-- Stats Metrics -->
+<section class="py-10 bg-slate-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-slate-500 uppercase">Enrolled Volunteers</span>
+          <div class="text-3xl font-black text-slate-900 mt-1">{{ stats.volunteers_count }}</div>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-xl">
+          <i class="fa-solid fa-users"></i>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-slate-500 uppercase">Summit RSVPs</span>
+          <div class="text-3xl font-black text-slate-900 mt-1">{{ stats.rsvps_count }}</div>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-green-100 text-green-700 flex items-center justify-center text-xl">
+          <i class="fa-solid fa-ticket"></i>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-slate-500 uppercase">Contact Messages</span>
+          <div class="text-3xl font-black text-slate-900 mt-1">{{ stats.messages_count }}</div>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Tables Section -->
+<section class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <!-- Volunteers Table -->
+    <div>
+      <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-user-plus text-red-600"></i> Recent Volunteers
+      </h3>
+      {% if stats.recent_volunteers %}
+      <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase text-[11px]">
+            <tr>
+              <th class="p-3.5">Name</th>
+              <th class="p-3.5">Contact</th>
+              <th class="p-3.5">Location</th>
+              <th class="p-3.5">Interest Domain</th>
+              <th class="p-3.5">Registered</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {% for v in stats.recent_volunteers %}
+            <tr class="hover:bg-slate-50">
+              <td class="p-3.5 font-bold text-slate-900">{{ v.full_name }}</td>
+              <td class="p-3.5 text-slate-600">
+                <div>{{ v.email }}</div>
+                <div class="text-xs text-slate-400">{{ v.phone }}</div>
+              </td>
+              <td class="p-3.5 text-slate-600">{{ v.district }}{% if v.state %}, {{ v.state }}{% endif %}</td>
+              <td class="p-3.5"><span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold">{{ v.interest_area }}</span></td>
+              <td class="p-3.5 text-xs text-slate-400">{{ v.created_at }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <p class="text-sm text-slate-500 italic p-6 rounded-2xl bg-slate-50 border border-slate-200">No volunteers registered yet.</p>
+      {% endif %}
+    </div>
+
+    <!-- RSVPs Table -->
+    <div>
+      <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-calendar-check text-green-600"></i> Recent Event RSVPs
+      </h3>
+      {% if stats.recent_rsvps %}
+      <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase text-[11px]">
+            <tr>
+              <th class="p-3.5">Event</th>
+              <th class="p-3.5">Attendee</th>
+              <th class="p-3.5">Contact</th>
+              <th class="p-3.5">Occupation & City</th>
+              <th class="p-3.5">RSVP Date</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {% for r in stats.recent_rsvps %}
+            <tr class="hover:bg-slate-50">
+              <td class="p-3.5 font-bold text-slate-900">{{ r.event_name }}</td>
+              <td class="p-3.5 text-slate-800 font-semibold">{{ r.full_name }}</td>
+              <td class="p-3.5 text-slate-600">
+                <div>{{ r.email }}</div>
+                <div class="text-xs text-slate-400">{{ r.phone }}</div>
+              </td>
+              <td class="p-3.5 text-slate-600">{{ r.occupation }}{% if r.city %} ({{ r.city }}){% endif %}</td>
+              <td class="p-3.5 text-xs text-slate-400">{{ r.created_at }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <p class="text-sm text-slate-500 italic p-6 rounded-2xl bg-slate-50 border border-slate-200">No event RSVPs yet.</p>
+      {% endif %}
+    </div>
+
+    <!-- Contact Messages Table -->
+    <div>
+      <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-message text-amber-600"></i> Contact Messages & Feedback
+      </h3>
+      {% if stats.recent_messages %}
+      <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase text-[11px]">
+            <tr>
+              <th class="p-3.5">Name</th>
+              <th class="p-3.5">Subject</th>
+              <th class="p-3.5">Message</th>
+              <th class="p-3.5">Date</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {% for m in stats.recent_messages %}
+            <tr class="hover:bg-slate-50">
+              <td class="p-3.5 font-bold text-slate-900">
+                {{ m.name }}
+                <div class="text-xs font-normal text-slate-400">{{ m.email }}</div>
+              </td>
+              <td class="p-3.5 font-semibold text-slate-700">{{ m.subject }}</td>
+              <td class="p-3.5 text-slate-600 text-xs max-w-xs truncate">{{ m.message }}</td>
+              <td class="p-3.5 text-xs text-slate-400">{{ m.created_at }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <p class="text-sm text-slate-500 italic p-6 rounded-2xl bg-slate-50 border border-slate-200">No contact messages received yet.</p>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

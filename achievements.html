@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Key Milestones | Vision India : PDA | काम बोलता है{% endblock %}
+
+{% block content %}
+
+<!-- Header Hero -->
+<section class="bg-slate-900 text-white py-16 border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-600/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+      Proven Governance Record
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Transformative Milestones: काम बोलता है</h1>
+    <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+      Real development is measured by impact on human lives and permanent public infrastructure that stands the test of time.
+    </p>
+  </div>
+</section>
+
+<!-- Achievements Grid -->
+<section class="py-16 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      {% for ach in achievements %}
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all glow-hover flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-red-100 text-red-700">{{ ach.category }}</span>
+            <span class="text-xs font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">{{ ach.stat }}</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 leading-snug">{{ ach.title }}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">{{ ach.description }}</p>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-semibold">
+          <span class="text-slate-700"><i class="fa-solid fa-star text-amber-500 mr-1"></i> {{ ach.highlight }}</span>
+          <span class="text-red-600 font-bold"><i class="fa-solid fa-check"></i> Delivered</span>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+    <!-- Quote Banner -->
+    <div class="mt-16 bg-gradient-to-r from-red-600 to-green-700 rounded-3xl p-8 sm:p-12 text-white text-center space-y-4 shadow-xl">
+      <h3 class="text-2xl sm:text-3xl font-extrabold">“Development without Discrimination, Progress for All”</h3>
+      <p class="text-white/90 max-w-2xl mx-auto text-sm sm:text-base">
+        From emergency response ambulances to high-tech highways and free educational technology, visionary governance transforms states into engines of economic growth.
+      </p>
+      <div class="pt-2">
+        <a href="/volunteer" class="inline-block px-6 py-3 bg-white text-slate-900 hover:bg-slate-100 rounded-xl font-bold text-sm shadow-md transition-all">
+          Join the Vision India Movement &rarr;
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

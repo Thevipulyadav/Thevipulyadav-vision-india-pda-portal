@@ -1,0 +1,556 @@
+{% extends "base.html" %}
+
+{% block title %}Vision India : PDA | Shri Akhilesh Yadav | Plan, Develop & Ascent{% endblock %}
+
+{% block content %}
+
+<!-- CREATIVE HERO SECTION -->
+<section class="relative hero-creative-bg text-white py-20 lg:py-28 overflow-hidden">
+  <!-- Subtle decorative ambient orbs -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-red-600/25 rounded-full blur-3xl pointer-events-none animate-pulse-subtle"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-emerald-600/25 rounded-full blur-3xl pointer-events-none animate-pulse-subtle"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold tracking-wider uppercase text-red-300 backdrop-blur-md">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+          <span data-i18n="hero_tagline">NEO INDIA | PLAN • DEVELOP • ASCENT</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+          A Future-Ready, Progressive & Just India for Every Citizen
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl" data-i18n="hero_desc">
+          ‘Vision India: Plan, Develop & Ascent’ (PDA) is a forward-looking national roadmap envisioned under the leadership of Shri Akhilesh Yadav ji. Built on the bedrock of constitutional values, youth technology, farmers' prosperity, and uncompromising social justice.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="/volunteer" class="px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 text-white shadow-xl shadow-red-600/30 hover:scale-105 transition-all text-sm sm:text-base flex items-center gap-2" data-i18n="btn_join_movement">
+            <i class="fa-solid fa-handshake-angle"></i> Join the Movement
+          </a>
+          <a href="/akhilesh-yadav" class="px-6 py-3.5 rounded-xl font-bold bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm sm:text-base backdrop-blur-md transition-all flex items-center gap-2">
+            <i class="fa-solid fa-user-tie text-red-400"></i> Shri Akhilesh Yadav Bio
+          </a>
+          <button onclick="openRsvpModal('Vision India Startup Summit 2025 - Bengaluru')" class="px-6 py-3.5 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xl shadow-emerald-600/20 text-sm sm:text-base transition-all flex items-center gap-2" data-i18n="btn_rsvp">
+            <i class="fa-solid fa-rocket"></i> Register for Summit
+          </button>
+        </div>
+
+        <!-- Leader Attribution Badge -->
+        <a href="/akhilesh-yadav" class="group block pt-6 border-t border-slate-800">
+          <div class="flex items-center gap-4 p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all max-w-lg backdrop-blur-sm">
+            <div class="w-14 h-14 rounded-full border-2 border-red-500 overflow-hidden bg-slate-950 shrink-0 shadow-lg">
+              <img src="{{ url_for('static', filename='images/akhilesh_press_hero.jpg') }}" alt="Akhilesh Yadav Press Address" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform">
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <h4 class="font-bold text-sm text-white group-hover:text-red-400 transition-colors">Shri Akhilesh Yadav</h4>
+                <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-800">View Bio &rarr;</span>
+              </div>
+              <p class="text-xs text-slate-400">National President, Samajwadi Party | 20th Chief Minister of UP</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Right Card: Leader Portrait & Interactive PDA Triad -->
+      <div class="lg:col-span-5">
+        <div class="relative">
+          
+          <!-- Portrait Hero Card with Press Conference Photo -->
+          <div class="portrait-creative-frame bg-slate-900 border border-slate-700/60 p-3 sm:p-4 shadow-2xl relative">
+            
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-950">
+              <img src="{{ url_for('static', filename='images/akhilesh_press_hero.jpg') }}" 
+                   alt="Shri Akhilesh Yadav Addressing Press Conference" 
+                   class="w-full h-full object-cover object-center">
+              
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+
+              <!-- Overlay Card Details -->
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/95 border border-slate-800 backdrop-blur-md space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-black uppercase tracking-widest text-red-400">Press Conference Address</span>
+                  <span class="text-[10px] font-bold text-slate-400">SP Office Lucknow</span>
+                </div>
+                <h3 class="text-lg font-black text-white">Shri Akhilesh Yadav</h3>
+                <p class="text-xs text-slate-300 leading-snug">
+                  “Social Justice, Modern Technology and Constitutional Dignity for every citizen.”
+                </p>
+                <div class="pt-2 flex items-center justify-between border-t border-slate-800 text-[11px] font-bold">
+                  <a href="https://www.instagram.com/Socialist_akhileshyadav/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 flex items-center gap-1">
+                    <i class="fa-brands fa-instagram"></i> @Socialist_akhileshyadav
+                  </a>
+                  <a href="/akhilesh-yadav" class="text-red-400 hover:text-white underline">Explore Journey &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge: PDA Triad Indicator -->
+            <div class="absolute -top-4 -right-4 bg-gradient-to-r from-red-600 to-green-600 text-white px-3.5 py-1.5 rounded-full text-xs font-black shadow-lg animate-float flex items-center gap-2 border border-white/20">
+              <img src="{{ url_for('static', filename='images/sp_flag_badge.svg') }}" alt="Samajwadi Party Bicycle" class="w-4 h-3.5 rounded object-cover shadow-sm">
+              <span>PDA REVOLUTION</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STATS STRIP -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-slate-800">
+      
+      <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 text-center backdrop-blur-sm creative-glow">
+        <div class="text-2xl sm:text-3xl font-black text-red-500" data-i18n="stat_laptops">18+ Lakh</div>
+        <div class="text-xs text-slate-300 font-semibold mt-1" data-i18n="stat_laptops_sub">Free Laptops Distributed</div>
+      </div>
+
+      <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 text-center backdrop-blur-sm creative-glow">
+        <div class="text-2xl sm:text-3xl font-black text-emerald-400" data-i18n="stat_expressway">302 km</div>
+        <div class="text-xs text-slate-300 font-semibold mt-1" data-i18n="stat_expressway_sub">Expressway with Fighter Runway</div>
+      </div>
+
+      <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 text-center backdrop-blur-sm creative-glow">
+        <div class="text-2xl sm:text-3xl font-black text-amber-400" data-i18n="stat_women_safety">1090</div>
+        <div class="text-xs text-slate-300 font-semibold mt-1" data-i18n="stat_women_safety_sub">Women Powerline 24x7</div>
+      </div>
+
+      <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 text-center backdrop-blur-sm creative-glow">
+        <div class="text-2xl sm:text-3xl font-black text-white" data-i18n="stat_social_justice">100%</div>
+        <div class="text-xs text-slate-300 font-semibold mt-1" data-i18n="stat_social_justice_sub">Social Justice & Caste Census</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- DEDICATED MODULE: SHRI AKHILESH YADAV PROFILE & WIKIPEDIA DOSSIER -->
+<section class="py-20 bg-slate-900 text-white relative overflow-hidden border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 text-xs font-bold uppercase tracking-wider">
+        The Leadership
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+        Shri Akhilesh Yadav: The Leader Shaping Neo India
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base">
+        A documented retrospective on his life, global environmental engineering education, transformative CM tenure, and pioneering PDA social justice movement.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Portrait Card with creative accents -->
+      <div class="lg:col-span-4 flex justify-center">
+        <div class="relative w-full max-w-sm rounded-3xl overflow-hidden border-2 border-red-500/40 p-2 bg-slate-950 shadow-2xl">
+          <img src="{{ url_for('static', filename='images/akhilesh_press_hero.jpg') }}" 
+               alt="Shri Akhilesh Yadav Addressing Press Conference" 
+               class="rounded-2xl w-full object-cover aspect-[4/3] object-center">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-black text-white">Shri Akhilesh Yadav</h3>
+            <p class="text-xs text-emerald-400 font-medium mt-0.5">National President, Samajwadi Party</p>
+            <p class="text-[11px] text-slate-400 mt-1">Born: 1 July 1973 &bull; Saifai, Etawah (UP)</p>
+            <a href="/akhilesh-yadav" class="mt-3 inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded-xl transition-all">
+              Full Biography & Political Timeline &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Wikipedia Cards Grid -->
+      <div class="lg:col-span-8 space-y-4">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 hover:border-red-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-red-600/20 text-red-400 flex items-center justify-center font-bold mb-3">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h4 class="font-bold text-white text-base">Elite Environmental Engineering</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              Educated at Dholpur Military School, holds a Bachelor's in Civil/Environmental Engineering from SJCE Mysore and Master’s in Environmental Engineering from <strong>University of Sydney, Australia</strong>.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 hover:border-emerald-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-bold mb-3">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <h4 class="font-bold text-white text-base">Youngest Chief Minister (Age 38)</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              Sworn in on 15 March 2012 as the 20th CM of Uttar Pradesh, becoming the youngest person in UP’s history to lead the government, ushering in the golden era of rapid development.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 hover:border-amber-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-400 flex items-center justify-center font-bold mb-3">
+              <i class="fa-solid fa-road"></i>
+            </div>
+            <h4 class="font-bold text-white text-base">Agra-Lucknow Expressway (302 km)</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              Built in record 23 months. Built India’s first dedicated 3.3 km runway for IAF fighter jets (Mirage 2000 & Sukhoi Su-30MKI), setting a benchmark in Indian civil engineering.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 hover:border-blue-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold mb-3">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h4 class="font-bold text-white text-base">The PDA Social Justice Coalition</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              Championed <strong>PDA (Pichhde, Dalit, Alpasankhyak)</strong> — uniting backward classes, scheduled castes, minorities and women for proportionate constitutional rights and national caste census.
+            </p>
+          </div>
+
+        <!-- Live Press Conference Snippets (From Getty Images Archive) -->
+        <div class="pt-3">
+          <div class="flex items-center justify-between mb-2.5">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+              <i class="fa-solid fa-microphone-lines text-red-500"></i> Press Conferences & Media Addresses
+            </span>
+            <a href="/akhilesh-yadav#press-conferences" class="text-xs text-red-400 hover:text-red-300 font-semibold">
+              Explore Gallery &rarr;
+            </a>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {% for photo in press_photos %}
+            <a href="/akhilesh-yadav#press-conferences" class="group relative rounded-xl overflow-hidden aspect-[4/3] border border-slate-800 bg-slate-950 block hover:border-red-500/50 transition-colors">
+              <img src="{{ url_for('static', filename='images/' + photo.filename) }}" alt="{{ photo.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-1.5 left-1.5 right-1.5">
+                <span class="text-[9px] font-bold text-white block truncate">{{ photo.title }}</span>
+                <span class="text-[8px] text-red-400 font-medium">{{ photo.date }}</span>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-red-950/60 to-slate-900 border border-red-900/60 flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
+          <div class="space-y-1">
+            <h5 class="text-sm font-bold text-white">Explore the Complete Wikipedia Biography & Archives</h5>
+            <p class="text-xs text-slate-400">Detailed election records, ministerial decisions, parliamentary debates and ideological texts.</p>
+          </div>
+          <a href="/akhilesh-yadav" class="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs shrink-0 shadow">
+            Read Complete Dossier &rarr;
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SPOTLIGHT: VISION INDIA STARTUP SUMMIT BENGALURU -->
+<section class="py-14 bg-gradient-to-r from-red-50 via-white to-green-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200/80 flex flex-col lg:flex-row items-center justify-between gap-8">
+      
+      <div class="space-y-3 max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800">
+          <i class="fa-solid fa-calendar-check"></i> NATIONAL ROADMAP LAUNCH
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900" data-i18n="summit_banner_title">
+          Vision India Startup Summit in Bengaluru
+        </h2>
+        <p class="text-sm font-semibold text-slate-500" data-i18n="summit_banner_sub">
+          Taj Bangalore | 16th November 2025
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="summit_banner_desc">
+          Bengaluru, India’s innovation capital, hosts the landmark national summit bringing together bright entrepreneurial minds, tech leaders, policymakers, and youth innovators led by Shri Akhilesh Yadav.
+        </p>
+      </div>
+
+      <div class="shrink-0 flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+        <button onclick="openRsvpModal('Vision India Startup Summit 2025 - Bengaluru')" class="px-6 py-3.5 rounded-xl font-bold bg-red-600 hover:bg-red-700 text-white shadow-md transition-all text-center flex items-center justify-center gap-2">
+          <i class="fa-solid fa-ticket"></i> Reserve Your Spot
+        </button>
+        <a href="/events" class="px-6 py-3.5 rounded-xl font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all text-center">
+          View All Events
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- THE PDA TRIAD: PLAN, DEVELOP, ASCENT -->
+<section class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <span class="text-xs font-black text-red-600 uppercase tracking-widest">Foundational Philosophy</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-i18n="triad_title">
+        The PDA Framework: Blueprint for Neo India
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base" data-i18n="triad_sub">
+        Plan, Develop & Ascent — Three interconnected engines propelling the nation toward equity and technological leadership.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- PLAN CARD -->
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all glow-hover flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-2xl font-black">
+            <i class="fa-solid fa-drafting-compass"></i>
+          </div>
+          <span class="inline-block px-2.5 py-1 rounded-md text-xs font-bold bg-red-50 text-red-700 uppercase tracking-wider">Pillar 1</span>
+          <h3 class="text-xl font-bold text-slate-900" data-i18n="triad_plan_title">Plan: Progressive Architecture</h3>
+          <p class="text-sm text-slate-600 leading-relaxed" data-i18n="triad_plan_desc">
+            Evidence-based, future-facing policymaking that puts youth, tech entrepreneurs, and democratic constitutional principles at the center of national governance.
+          </p>
+          <ul class="text-xs text-slate-500 space-y-2 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-600"></i> Tech startup seed capital fund</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-600"></i> Legal MSP formula for cultivators</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-600"></i> Constitutional safeguards and civil liberties</li>
+          </ul>
+        </div>
+        <div class="pt-6 mt-6 border-t border-slate-100">
+          <a href="/blueprint#plan" class="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1">
+            Explore Plan Roadmap &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- DEVELOP CARD -->
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all glow-hover flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-black">
+            <i class="fa-solid fa-city"></i>
+          </div>
+          <span class="inline-block px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-50 text-emerald-700 uppercase tracking-wider">Pillar 2</span>
+          <h3 class="text-xl font-bold text-slate-900" data-i18n="triad_dev_title">Develop: World-Class Infrastructure</h3>
+          <p class="text-sm text-slate-600 leading-relaxed" data-i18n="triad_dev_desc">
+            State-of-the-art expressways, metro transit, clean green energy, world-class healthcare institutes, and agricultural modernisation.
+          </p>
+          <ul class="text-xs text-slate-500 space-y-2 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600"></i> High-speed economic expressway corridors</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600"></i> Free quality super-specialty hospitals & 108 network</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600"></i> Clean riverfronts & Asia's largest solar parks</li>
+          </ul>
+        </div>
+        <div class="pt-6 mt-6 border-t border-slate-100">
+          <a href="/blueprint#develop" class="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
+            Explore Develop Roadmap &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- ASCENT CARD -->
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all glow-hover flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl font-black">
+            <i class="fa-solid fa-users-rays"></i>
+          </div>
+          <span class="inline-block px-2.5 py-1 rounded-md text-xs font-bold bg-amber-50 text-amber-700 uppercase tracking-wider">Pillar 3</span>
+          <h3 class="text-xl font-bold text-slate-900" data-i18n="triad_asc_title">Ascent: Pichhde, Dalit & Alpasankhyak</h3>
+          <p class="text-sm text-slate-600 leading-relaxed" data-i18n="triad_asc_desc">
+            Ensuring genuine socio-economic mobility, affirmative representation, dignity, and equitable prosperity for the marginalized communities.
+          </p>
+          <ul class="text-xs text-slate-500 space-y-2 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> National Caste Census for proportional welfare</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Women empowerment (1090 powerline & scholarships)</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Social justice as a constitutional birthright</li>
+          </ul>
+        </div>
+        <div class="pt-6 mt-6 border-t border-slate-100">
+          <a href="/blueprint#ascent" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1">
+            Explore Ascent Roadmap &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HISTORIC ACHIEVEMENTS / KAAM BOLTA HAI -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <span class="text-xs font-black text-green-700 uppercase tracking-widest">Proven Track Record</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Transformative Milestones: काम बोलता है</h2>
+      </div>
+      <a href="/achievements" class="text-sm font-bold text-red-600 hover:text-red-700 flex items-center gap-1">
+        View All Key Milestones &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {% for ach in achievements %}
+      <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-slate-300 transition-all glow-hover">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-red-100 text-red-800">{{ ach.category }}</span>
+          <span class="text-sm font-extrabold text-green-700">{{ ach.stat }}</span>
+        </div>
+        <h3 class="text-xl font-extrabold text-slate-900 mb-2">{{ ach.title }}</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">{{ ach.description }}</p>
+        <div class="mt-4 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500 font-semibold">
+          <span><i class="fa-solid fa-award text-amber-500 mr-1"></i> {{ ach.highlight }}</span>
+          <a href="/achievements" class="text-red-600 hover:underline">Read details</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- JOIN THE MOVEMENT: DIRECT VOLUNTEER REGISTRATION -->
+<section id="volunteer" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-5 space-y-6">
+        <span class="px-3 py-1 rounded-full text-xs font-black bg-red-600 text-white tracking-widest uppercase">Participate</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight" data-i18n="form_volunteer_title">
+          Be the Catalyst for Change in Neo India
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed" data-i18n="form_volunteer_sub">
+          Join thousands of youth innovators, researchers, grassroots organizers, lawyers, and policy thinkers in translating the PDA vision into tangible progress.
+        </p>
+
+        <div class="space-y-3 pt-4 text-sm text-slate-300">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-red-600/30 text-red-400 flex items-center justify-center"><i class="fa-solid fa-code"></i></div>
+            <span>Tech & Digital Campaign Warriors</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-green-600/30 text-green-400 flex items-center justify-center"><i class="fa-solid fa-wheat-awn"></i></div>
+            <span>Rural Outreach & Farmer Alliance</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-600/30 text-amber-400 flex items-center justify-center"><i class="fa-solid fa-scale-balanced"></i></div>
+            <span>Legal Aid & Constitutional Defense Wing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <h3 class="text-2xl font-black text-slate-900 mb-2">PDA Volunteer Enrolment</h3>
+          <p class="text-xs text-slate-500 mb-6">Fill the form below to become an active contributor.</p>
+
+          <form id="volunteer-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Full Name *</label>
+              <input type="text" name="full_name" required placeholder="Enter your full name" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Email *</label>
+                <input type="email" name="email" required placeholder="you@domain.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Mobile Phone *</label>
+                <input type="tel" name="phone" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">State</label>
+                <input type="text" name="state" placeholder="e.g. Uttar Pradesh, Karnataka" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">District / City</label>
+                <input type="text" name="district" placeholder="e.g. Lucknow, Bengaluru" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Preferred Contribution Area</label>
+              <select name="interest_area" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none bg-white">
+                <option value="Tech & Digital Innovation">Tech, Web & Digital Innovation</option>
+                <option value="Youth & Student Outreach">Youth & Student Outreach</option>
+                <option value="Policy & Socio-Economic Research">Policy & Socio-Economic Research</option>
+                <option value="Farmer & Rural Action">Farmer & Rural Action</option>
+                <option value="Legal Defense & Human Rights">Legal Defense & Human Rights</option>
+                <option value="Media, Creative & Content">Media, Creative & Content</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Why do you wish to join PDA?</label>
+              <textarea name="message" rows="3" placeholder="Briefly share your thoughts or ideas..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl font-black bg-gradient-to-r from-red-600 to-green-600 hover:opacity-90 text-white shadow-lg text-sm sm:text-base transition-all" data-i18n="form_submit">
+              Submit Registration
+            </button>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- QUICK CONNECT / FEEDBACK SECTION -->
+<section id="contact" class="py-16 bg-white border-t border-slate-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-red-600 uppercase tracking-widest">Reach Out</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Connect with Team Vision India</h2>
+      <p class="text-xs sm:text-sm text-slate-500 mt-2">Your feedback and inputs are crucial in shaping the future of India.</p>
+    </div>
+
+    <form id="contact-form" class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 space-y-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Name *</label>
+          <input type="text" name="name" required placeholder="Your Name" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Email *</label>
+          <input type="email" name="email" required placeholder="your.email@domain.com" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Phone</label>
+          <input type="tel" name="phone" placeholder="+91..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Subject</label>
+          <input type="text" name="subject" placeholder="General Inquiry / Idea" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Your Message *</label>
+        <textarea name="message" rows="3" required placeholder="Write your message here..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-red-500 outline-none"></textarea>
+      </div>
+      <button type="submit" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-bold text-sm transition-colors">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

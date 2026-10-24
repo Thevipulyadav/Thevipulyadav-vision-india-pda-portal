@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+
+{% block title %}Shri Akhilesh Yadav | Biography, Leadership & Vision | Vision India PDA{% endblock %}
+
+{% block content %}
+
+<!-- HERO BIOGRAPHY SECTION -->
+<section class="relative hero-creative-bg text-white py-20 lg:py-28 overflow-hidden border-b border-slate-800">
+  
+  <!-- Subtle ambient decorative light blobs -->
+  <div class="absolute -top-24 -left-24 w-96 h-96 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Portrait & Key Badges -->
+      <div class="lg:col-span-5 flex flex-col items-center">
+        
+        <div class="relative w-full max-w-sm portrait-creative-frame bg-slate-900/90 border border-slate-700/60 p-2.5">
+          <!-- Photo -->
+          <div class="overflow-hidden rounded-[1.75rem] aspect-[3/4] relative bg-slate-950">
+            <img src="{{ url_for('static', filename='images/akhilesh_yadav_portrait.jpg') }}" 
+                 alt="Shri Akhilesh Yadav" 
+                 class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+            
+            <div class="absolute bottom-4 left-4 right-4 text-center">
+              <span class="px-3 py-1 rounded-full text-[11px] font-black tracking-wider uppercase bg-red-600 text-white shadow-lg">
+                National Socialist Leader
+              </span>
+            </div>
+          </div>
+
+          <!-- Floating Info Pills -->
+          <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-11/12 bg-slate-900/95 border border-slate-700 px-4 py-2.5 rounded-2xl shadow-2xl backdrop-blur-md flex items-center justify-between text-xs">
+            <div class="text-center">
+              <div class="font-extrabold text-red-400">Youngest CM</div>
+              <div class="text-[10px] text-slate-400">At Age 38</div>
+            </div>
+            <div class="h-6 w-px bg-slate-700"></div>
+            <div class="text-center">
+              <div class="font-extrabold text-emerald-400">Env. Engineer</div>
+              <div class="text-[10px] text-slate-400">Sydney Univ.</div>
+            </div>
+            <div class="h-6 w-px bg-slate-700"></div>
+            <div class="text-center">
+              <div class="font-extrabold text-amber-400">PDA Architect</div>
+              <div class="text-[10px] text-slate-400">Social Justice</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Column: Biography & Quick Dossier -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold tracking-wide uppercase text-red-300">
+          <i class="fa-solid fa-certificate text-red-500"></i>
+          <span>Official Biographical Profile</span>
+        </div>
+
+        <div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+            Shri Akhilesh Yadav
+          </h1>
+          <p class="text-lg text-emerald-400 font-semibold mt-1">श्री अखिलेश यादव</p>
+          <p class="text-sm sm:text-base text-slate-300 mt-2 font-medium">
+            20th Chief Minister of Uttar Pradesh (2012–2017) &bull; National President, Samajwadi Party &bull; Member of Parliament (Lok Sabha)
+          </p>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Born on 1st July 1973 in Saifai (Etawah), Shri Akhilesh Yadav has emerged as one of modern India’s most influential progressive leaders. Combining an engineering acumen with grassroots democratic socialism, he spearheaded Uttar Pradesh's modern infrastructure revolution and pioneered the historic <strong>PDA (Pichhde, Dalit, Alpasankhyak)</strong> social justice alliance.
+        </p>
+
+        <!-- Quick Bio Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-xs sm:text-sm">
+          <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+            <span class="text-slate-400 text-xs block">Born & Roots</span>
+            <span class="font-bold text-white">1 July 1973 &bull; Saifai, Etawah (UP)</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+            <span class="text-slate-400 text-xs block">Parents</span>
+            <span class="font-bold text-white">Late Mulayam Singh Yadav & Malti Devi</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+            <span class="text-slate-400 text-xs block">Spouse</span>
+            <span class="font-bold text-white">Smt. Dimple Yadav (Member of Parliament)</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+            <span class="text-slate-400 text-xs block">Education</span>
+            <span class="font-bold text-white">M.Tech Env. Engineering (Sydney, Australia)</span>
+          </div>
+        </div>
+
+        <!-- Action Links & Social -->
+        <div class="flex flex-wrap items-center gap-3 pt-4">
+          <a href="#governance" class="px-5 py-3 rounded-xl font-bold bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm shadow-lg shadow-red-600/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-landmark"></i> Landmark Governance
+          </a>
+          <a href="https://www.instagram.com/Socialist_akhileshyadav/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 hover:opacity-95 text-white text-xs sm:text-sm shadow-lg shadow-pink-600/25 transition-all flex items-center gap-2">
+            <i class="fa-brands fa-instagram text-sm"></i> @Socialist_akhileshyadav
+          </a>
+          <a href="#pda-ideology" class="px-5 py-3 rounded-xl font-bold bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm transition-all flex items-center gap-2">
+            <i class="fa-solid fa-users-rays"></i> PDA Philosophy
+          </a>
+          <a href="/volunteer" class="px-5 py-3 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm transition-all flex items-center gap-2">
+            <i class="fa-solid fa-handshake"></i> Join Movement
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- EDUCATION & FORMATIVE YEARS -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-black text-red-600 uppercase tracking-widest">Academic Excellence</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Education & Technological Foundation</h2>
+      <p class="text-slate-600 text-sm mt-2">
+        Shri Akhilesh Yadav's educational background reflects an extraordinary blend of military discipline and global environmental engineering expertise.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for edu in bio.education %}
+      <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:shadow-xl transition-all glow-hover flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">{{ edu.institution }}</h3>
+          <p class="text-sm font-semibold text-emerald-700">{{ edu.degree }}</p>
+          <p class="text-xs text-slate-500 leading-relaxed">{{ edu.highlight }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- POLITICAL JOURNEY TIMELINE -->
+<section class="py-20 bg-slate-900 text-white border-y border-slate-800">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16 space-y-2">
+      <span class="text-xs font-black text-red-400 uppercase tracking-widest">Wikipedia Political Dossier</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold">A Quarter-Century of Public Service</h2>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto">From entering Parliament at 27 to steering the largest state in India and leading the constitutional opposition.</p>
+    </div>
+
+    <div class="relative border-l-2 border-red-600/40 ml-4 sm:ml-8 space-y-12">
+      
+      {% for item in bio.political_timeline %}
+      <div class="relative pl-8 sm:pl-10 group">
+        <!-- Dot indicator -->
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-red-500 group-hover:bg-red-500 transition-colors"></div>
+        
+        <div class="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-slate-700 transition-all glow-hover">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="px-3 py-0.5 rounded-full text-xs font-black bg-red-600/20 text-red-400 border border-red-500/30">
+              {{ item.year }}
+            </span>
+            <span class="text-xs text-slate-500 font-semibold">Milestone</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1.5">{{ item.role }}</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">{{ item.details }}</p>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- LANDMARK GOVERNANCE (2012-2017) -->
+<section id="governance" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <span class="text-xs font-black text-green-700 uppercase tracking-widest">Tenure as 20th Chief Minister</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+        The Golden Era of UP Infrastructure & Social Inclusion
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base">
+        A documented track record recognized across India for speed, visionary engineering, and unbending empathy for students, farmers, and women.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      {% for m in bio.legacy_milestones %}
+      <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/90 hover:shadow-xl transition-all glow-hover flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg mb-4">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">{{ m.name }}</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">{{ m.desc }}</p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-200 text-xs font-semibold text-emerald-700">
+          <i class="fa-solid fa-shield-halved mr-1"></i> Public Infrastructure Benchmark
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRESS CONFERENCES & MEDIA ARCHIVES (GETTY IMAGES / HINDUSTAN TIMES ARCHIVE) -->
+<section id="press-conferences" class="py-20 bg-slate-950 text-white border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 text-xs font-bold uppercase tracking-wider mb-2">
+          <i class="fa-solid fa-microphone-lines"></i> National Media Addresses
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Press Conferences: Fearless Public Dialogue</h2>
+        <p class="text-slate-400 text-sm mt-1 max-w-2xl">
+          Documented press conferences of Samajwadi Party President Shri Akhilesh Yadav addressing national journalists on the Constitution, democratic ethics, farmer rights, and women safety.
+        </p>
+      </div>
+      <a href="https://www.gettyimages.in/photos/press-conference-of-samajwadi-party-president-akhilesh-yadav" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm font-bold text-red-400 hover:text-red-300 flex items-center gap-1.5 shrink-0">
+        <span>View Full Getty Images Archive</span> &rarr;
+      </a>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {% for photo in press_photos %}
+      <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-red-500/50 transition-all glow-hover flex flex-col justify-between group">
+        <div>
+          <div class="overflow-hidden aspect-[4/3] relative bg-slate-950">
+            <img src="{{ url_for('static', filename='images/' + photo.filename) }}" 
+                 alt="{{ photo.title }}" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-red-600/90 text-white backdrop-blur-sm">
+              {{ photo.date }}
+            </span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h4 class="text-sm font-bold text-white leading-snug group-hover:text-red-400 transition-colors">
+              {{ photo.title }}
+            </h4>
+            <p class="text-xs text-slate-400 leading-relaxed line-clamp-2">
+              {{ photo.topic }}
+            </p>
+          </div>
+        </div>
+        <div class="px-4 pb-4 pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500">
+          <span><i class="fa-solid fa-camera mr-1 text-slate-400"></i> {{ photo.source }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- THE PDA PHILOSOPHY -->
+<section id="pda-ideology" class="py-20 bg-gradient-to-r from-red-50 via-white to-green-50 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden">
+      
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-3xl space-y-6 relative z-10">
+        <span class="px-3 py-1 rounded-full text-xs font-black bg-red-600 text-white uppercase tracking-wider">
+          Ideological Doctrine
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+          The PDA Vision: Social Justice as Constitutional Dharma
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Coined and spearheaded by Shri Akhilesh Yadav, <strong>PDA represents Pichhde (Backward Classes), Dalit, and Alpasankhyak (Minorities)</strong>, along with half the population—our mothers and sisters (आधी आबादी). It is not merely an electoral equation, but an affirmative social coalition dedicated to rectifying centuries of inequality.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-200 pt-2">
+          <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+            <span class="font-bold text-red-400 block mb-1">Caste Census Guarantee</span>
+            Scientific assessment of demographic representation to ensure resources and jobs reach every marginalized household.
+          </div>
+          <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+            <span class="font-bold text-emerald-400 block mb-1">Defense of the Constitution</span>
+            Upholding Babasaheb Ambedkar's democratic values against centralization, monopolization, and erosion of institutions.
+          </div>
+        </div>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a href="/volunteer" class="px-6 py-3 rounded-xl bg-gradient-to-r from-red-600 to-green-600 hover:opacity-90 font-bold text-sm shadow-md transition-all">
+            Join the PDA Movement &rarr;
+          </a>
+          <a href="/blueprint" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 font-bold text-sm transition-all">
+            Read Policy Blueprint
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
