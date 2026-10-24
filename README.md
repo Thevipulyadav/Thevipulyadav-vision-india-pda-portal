@@ -104,13 +104,6 @@ The application uses SQLite to store information such as:
 
 The database is initialized by the application when it starts, according to the database initialization code.
 
-## 🔐 Security Notes
-
-* Do not upload database files containing private or personal information.
-* Do not publish secret keys, passwords, or API credentials.
-* Store the Flask secret key in an environment variable.
-* Disable Flask debug mode when deploying the application publicly.
-* Protect the admin dashboard with proper authentication and authorization.
 
 ## 🎯 Project Objectives
 
@@ -130,7 +123,7 @@ The database is initialized by the application when it starts, according to the 
 
 ## 👨‍💻 Author
 
-**Developer:** Your Name
+**Developer:** VIPUL YADAV
 
 ## 📄 License
 
